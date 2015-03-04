@@ -38,7 +38,7 @@ module.exports = {
 			filename: 'index.js'
 		},
 		resolve: {
-			modulesDirectories: ['node_modules', 'bower_components']
+			modulesDirectories: ['node_modules']
 		},
 		resolveLoader: {
 			modulesDirectories: ['node_modules']
@@ -48,12 +48,7 @@ module.exports = {
 				test: /\.js$/,
 				loader: 'es6-loader'
 			}]
-		},
-		plugins: [
-			new webpack.ResolverPlugin(
-				new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-			)
-		]
+		}
 	},
 	connect: {
 		port: 8080,

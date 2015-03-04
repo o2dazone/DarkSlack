@@ -1,0 +1,20 @@
+.typing_indicator {
+  @extend .hideElement;
+}
+
+/* "More..." field in column sidebar */
+.list_more {
+  @extend .hideElement;
+}
+
+.section_holder [id*="_header"] {
+  @extend .hideElement;
+}
+
+#aria_live_announcer {
+  @extend .hideElement;
+}
+
+#msgs_overlay_div {
+  @extend .hideElement;
+}

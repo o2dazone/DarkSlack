@@ -1,0 +1,228 @@
+html {
+  @extend .darkBg;
+}
+
+#flex_contents {
+  .heading {
+    @extend .darkBg;
+  }
+  .menu_heading {
+    @extend .darkBg;
+  }
+}
+
+#col_flex {
+  @extend .darkBg;
+}
+
+#col_flex .toolbar {
+  @extend .darkBg;
+}
+
+.monkey_scroll_bar {
+  @extend .darkBg;
+}
+
+.divider_label {
+  @extend .darkBg;
+}
+
+.day_divider_label {
+  @extend .darkBg;
+}
+
+.day_divider {
+  @extend .darkBg;
+}
+
+#search_terms {
+  @extend .darkBg;
+}
+
+#primary_file_button {
+  @extend .darkBg;
+}
+
+#message-input {
+  @extend .darkBg;
+  font-size: 14px $i;
+}
+
+#channel_members_toggle {
+  @extend .darkBg;
+}
+
+#header {
+  @extend .darkBg;
+}
+
+#footer {
+  @extend .darkBg;
+}
+
+#col_messages {
+  @extend .darkBg;
+}
+
+#msgs_overlay_div {
+ @extend .darkBg;
+}
+
+* {
+  border-radius: 0 $i;
+}
+
+#header {
+  zoom: .75 $i;
+  position: absolute $i;
+  min-width: 0px $i;
+  width: 720px $i;
+  top: 0 $i;
+  right: -550px $i;
+  transition: .25s right;
+  &:hover {
+    z-index: 10 $i;
+    right: 0 $i;
+  }
+}
+
+#footer {
+  left: 40px $i;
+}
+
+.message {
+  line-height: 10px $i;
+  margin-top: 0 $i;
+  padding-top: 1px $i;
+  padding-bottom: 1px $i;
+}
+
+.message_content, #message-input {
+  color: #888 $i;
+}
+
+.message_content, .message_sender {
+  font: 13px "Lucida Grande" $i;
+}
+
+.is_limited_div {
+  background: transparent $i;
+}
+
+.day_divider hr, #header a, #search_terms, #message-input, #primary_file_button {
+  border-width: 1px $i;
+  border-color: #444 $i;
+}
+
+/* unread message banner at top of page */
+
+#messages_unread_status {
+  background: #51102E $i;
+}
+
+.message.divider {
+  border-color: $c_darkgrey $i;
+}
+
+#client_body {
+  margin-top: 0 $i;
+}
+
+/* scroll bar */
+
+.monkey_scroll_handle_inner {
+  background: #777 $i;
+  border-color: #444 $i;
+}
+
+/* timestamp */
+
+.timestamp {
+  font-size: 12px $i;
+  color: #333 $i;
+}
+
+/* unread divider */
+
+.unread_divider hr {
+  margin-bottom: 2px $i;
+  border-color: #661100 $i;
+}
+
+.message_sender {
+  font-weight: bold $i;
+  color: #444 $i;
+}
+
+/* message container spacing */
+
+#messages_container {
+  margin-left: -10px $i;
+}
+
+/* sidebar tweaks */
+
+.monkey_scroll_hider {
+  overflow: visible $i;
+}
+
+#col_channels_bg {
+  display: none $i;
+}
+
+#channels_scroller {
+  height: auto $i;
+}
+
+.channels_list_holder {
+  .section_holder {
+    margin: 0 0 4px $i;
+  }
+  ul {
+    width: auto $i;
+    li {
+      float: left $i;
+    }
+  }
+}
+
+#channel-list {
+  height: auto $i;
+}
+
+#col_channels {
+  width: 100% $i;
+  height: 24px $i;
+  overflow: hidden $i;
+  left: 0 $i;
+  top: 0px;
+  font-family: Helvetica $i;
+  z-index: 5;
+  position: absolute $i;
+}
+
+/* collapse sidebar */
+.group, .channel {
+  padding-right: 0px $i;
+}
+
+.member {
+  padding-right: 0px $i;
+  a {
+    padding-right: 33px $i;
+  }
+}
+
+.channel_name, .section_holder, .group_name, .im_name, .channel, #channel-list, #im-list {
+  float: left $i;
+}
+
+.channel_name, .group_name, .im_name {
+  width: auto $i;
+  padding: 0 10px 0 3px $i;
+  font-size: 12px $i;
+}
+
+#messages_unread_status {
+  top: 24px $i;
+}

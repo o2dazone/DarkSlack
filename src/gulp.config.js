@@ -1,10 +1,6 @@
-var info = require('./package.json');
 var webpack = require('webpack');
 
 module.exports = {
-	title: info.title,
-	author: info.author,
-	version: info.verions,
 	build: Date.now(),
 	scripts: {
 		paths: {

@@ -1,7 +1,4 @@
 {
-  "name": "SinglePageApplication",
-  "author": "Joel Griffith",
-  "version": "0.1.0",
   "devDependencies": {
     "es6-loader": "^0.2.0",
     "gulp": "^3.8.7",

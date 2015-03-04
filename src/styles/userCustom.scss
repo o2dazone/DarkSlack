@@ -2,8 +2,3 @@
 .message_sender[href*="/brmurry"] {
   color: #bcd0d5 $i;
 }
-
-/* hides the general chat tab in sidebar, for those that don't use it */
-.channel_C0251D3QL {
-  @extend .hideElement;
-}

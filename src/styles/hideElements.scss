@@ -22,3 +22,15 @@
 .channels_list_new_btn {
   @extend .hideElement;
 }
+
+#presence_container {
+  @extend .hideElement;
+}
+
+.is_limited_div {
+  @extend .hideElement;
+}
+
+.dm_explanation {
+  @extend .hideElement;
+}

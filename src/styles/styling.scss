@@ -68,6 +68,10 @@ html {
  @extend .darkBg;
 }
 
+#header * {
+  @extend .darkBg;
+}
+
 * {
   border-radius: 0 $i;
 }
@@ -121,7 +125,7 @@ html {
 }
 
 .message.divider {
-  border-color: $c_darkgrey $i;
+  border-color: transparent $i;
 }
 
 #client_body {
@@ -186,6 +190,14 @@ html {
   }
 }
 
+.inline_attachment {
+  border-radius: 0 $i;
+  color: #748543 $i;
+  .attachment_bar {
+    background: transparent $i;
+  }
+}
+
 #channel-list {
   height: auto $i;
 }
@@ -195,7 +207,7 @@ html {
   height: 24px $i;
   overflow: hidden $i;
   left: 0 $i;
-  top: 0px;
+  top: 0px $i;
   font-family: Helvetica $i;
   z-index: 5;
   position: absolute $i;

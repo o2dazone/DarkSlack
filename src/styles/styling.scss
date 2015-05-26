@@ -176,6 +176,10 @@ html {
 
 #channels_scroller {
   height: auto $i;
+  > div {
+    float: left $i;
+    width: auto $i;
+  }
 }
 
 .channels_list_holder {

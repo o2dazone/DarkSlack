@@ -68,26 +68,70 @@ html {
  @extend .darkBg;
 }
 
-#header * {
-  @extend .darkBg;
-}
-
 * {
   border-radius: 0 $i;
 }
 
 #header {
   zoom: .75 $i;
+  outline: 1px solid $c_darkborder $i;
   position: absolute $i;
   min-width: 0px $i;
-  width: 720px $i;
+  width: 100% $i;
+  height: $v_header-height $i;
   top: 0 $i;
-  right: -550px $i;
-  transition: .25s right;
+  left: 85% $i;
+  transition: .5s left;
+
   &:hover {
     z-index: 10 $i;
-    right: 0 $i;
+    left: 0 $i;  }
+
+}
+
+/* menu when clicking on team name */
+#team_menu {
+  height: $v_header-height $i;
+
+  .ts_icon_chevron_large_down {
+    margin-top: -12px $i;
   }
+}
+
+/* active user list icon */
+#channel_header #channel_members_toggle {
+  bottom: .1rem $i;
+}
+
+/* channel name */
+#active_channel_name {
+  height: $v_header-height $i;
+  line-height: 44px $i;
+
+  .name {
+    line-height: 40px $i;
+  }
+}
+
+/* team name */
+#team_name {
+  margin-top: 6px $i;
+}
+
+/* search box form */
+#header_search_form {
+  margin-top: 0 $i;
+
+  /* input field */
+  .search_form.search_input {
+    height: $v_header-height $i;
+  }
+}
+
+/* icons right of the search box */
+#details_toggle, #flex_menu_toggle, #recent_mentions_toggle, #stars_toggle {
+  top: 5px $i;
+  border: 0 $i;
 }
 
 #footer {
@@ -208,6 +252,7 @@ html {
 
 #col_channels {
   width: 100% $i;
+  border-bottom: 1px solid $c_darkborder;
   height: 24px $i;
   overflow: hidden $i;
   left: 0 $i;
@@ -215,6 +260,18 @@ html {
   font-family: Helvetica $i;
   z-index: 5;
   position: absolute $i;
+}
+
+/* when someone mentions your name in chat */
+body:not(.feature_new_message_markup) .message .mention {
+  background: #353535 $i;
+  border: none $i;
+}
+
+/* emoji reaction icons */
+.emoji_rxn {
+  background: transparent $i;
+  border: none $i;
 }
 
 /* collapse sidebar */

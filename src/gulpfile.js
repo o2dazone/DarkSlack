@@ -9,6 +9,10 @@ var imagemin = require('gulp-imagemin');
 var webpack = require('gulp-webpack');
 var gulpConfig = require('./gulp.config');
 
+var sys = require('sys')
+var exec = require('child_process').exec;
+function puts(error, stdout, stderr) { sys.puts(stdout) }
+
 // Tasks
 gulp.task('default', ['hint', 'scripts', 'styles']);
 
@@ -39,9 +43,13 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest(gulpConfig.styles.paths.output.prod));
 });
 
+gulp.task('refresh_extension', function(){
+  exec("open http://reload.extensions", puts);
+});
+
 gulp.task('watch', ['default'], function() {
-	gulp.watch(gulpConfig.scripts.paths.all, ['scripts']);
-	gulp.watch(gulpConfig.styles.paths.all, ['styles']);
+	gulp.watch(gulpConfig.scripts.paths.all, ['scripts', 'hint', 'refresh_extension']);
+	gulp.watch(gulpConfig.styles.paths.all, ['styles', 'refresh_extension']);
 	connect.server({
 		port: gulpConfig.connect.port,
 		root: gulpConfig.scripts.paths.output.dev,

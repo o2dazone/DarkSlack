@@ -45,7 +45,7 @@ html {
 
 #message-input {
   @extend .darkBg;
-  font-size: 1rem $i;
+  font-size: .8rem $i;
 }
 
 #channel_members_toggle {
@@ -150,7 +150,7 @@ html {
 }
 
 .message_content, .message_sender {
-  font: .7rem "Lucida Grande" $i;
+  font: .8rem "Lucida Grande" $i;
 }
 
 .is_limited_div {
@@ -252,7 +252,8 @@ html {
 
 #col_channels {
   width: 100% $i;
-  border-bottom: 1px solid $c_darkborder;
+  box-shadow: 0 10px 10px rgba(0,0,0,.6) !important;
+  border-bottom: 1px solid #333;
   height: 24px $i;
   overflow: hidden $i;
   left: 0 $i;
@@ -293,7 +294,7 @@ body:not(.feature_new_message_markup) .message .mention {
 .channel_name, .group_name, .im_name {
   width: auto $i;
   padding: 0 10px 0 3px $i;
-  font-size: .6rem $i;
+  font-size: .7rem $i;
 }
 
 #messages_unread_status {

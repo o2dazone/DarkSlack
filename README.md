@@ -15,6 +15,6 @@ Clone this repo down. Open up Chrome, and go to your Extensions. Check the box "
 Slack allows a user to customize the sidebar. We use this over CSS overrides because native styling > *. Go to Preferences > Sidebar Theme and click the "Customize" link at the bottom. Copy paste the contents of sidebar_customization and click "Done".
 
 # Building/Developing
-This step is only required if you change any of the source. Cd into the DarkSlack/src and run 'npm install'. After that, run 'gulp watch' and it will compile your assets in the proper locations. (inside the chrome-extension directory). I use [Reload Extensions](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid?hl=en) plugin to aid in refreshing the Extension during development.
+This step is only required if you change any of the source. Cd into the DarkSlack/src and run 'npm install'. After that, run 'gulp watch' and it will compile your assets in the proper locations. (inside the chrome-extension directory). I use [Extensions Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid?hl=en) plugin to aid in refreshing the Extension during development.
 
 

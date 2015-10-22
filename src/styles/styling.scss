@@ -79,7 +79,7 @@ html {
   min-width: 0px $i;
   width: 100% $i;
   height: $v_header-height $i;
-  top: 0 $i;
+  top: 35px $i;
   left: 85% $i;
   transition: .5s left;
 
@@ -220,8 +220,13 @@ html {
 
 #channels_scroller {
   height: auto $i;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: scroll $i;
+  white-space: nowrap;
+
   > div {
-    float: left $i;
+    display: inline-block $i;
     width: auto $i;
   }
 }
@@ -232,9 +237,6 @@ html {
   }
   ul {
     width: auto $i;
-    li {
-      float: left $i;
-    }
   }
 }
 
@@ -287,8 +289,15 @@ body:not(.feature_new_message_markup) .message .mention {
   }
 }
 
-.channel_name, .section_holder, .group_name, .im_name, .channel, #channel-list, #im-list {
-  float: left $i;
+#starred-list, #group-list, #channel-list, #im-list {
+  overflow: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: inline-block $i;
+
+  > li {
+    display: inline-block;
+  }
 }
 
 .channel_name, .group_name, .im_name {

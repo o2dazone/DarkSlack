@@ -142,7 +142,6 @@ html {
   font: bold $v_font-size*.9 $v_font-family $i;
   height: $v_font-size*.9 $i;
   font-weight: bold $i;
-  color: #555 $i;
   width: 10%;
   overflow-x: hidden $i;
   overflow-y: visible $i;
@@ -152,6 +151,7 @@ html {
   text-align: right;
   white-space: nowrap;
   padding-right: 10px;
+  -webkit-filter: saturate(0.4);
 
   text-transform: uppercase;
   a {

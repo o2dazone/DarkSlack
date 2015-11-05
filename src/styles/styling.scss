@@ -1,3 +1,7 @@
+@import "partials/misc";
+@import "partials/colors";
+@import "partials/extends";
+
 html {
   @extend .darkBg;
 }

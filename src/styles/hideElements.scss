@@ -1,36 +1,40 @@
+%hideElement {
+  display: none !important;
+}
+
 .typing_indicator {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 /* "More..." field in column sidebar */
 .list_more {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 .section_holder [id*="_header"] {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 #aria_live_announcer {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 #msgs_overlay_div {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 .channels_list_new_btn {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 #presence_container {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 .is_limited_div {
-  @extend .hideElement;
+  @extend %hideElement;
 }
 
 .dm_explanation {
-  @extend .hideElement;
+  @extend %hideElement;
 }

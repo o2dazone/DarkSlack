@@ -15,7 +15,7 @@ module.exports = {
 	styles: {
 		paths: {
 			all: './styles/**/*.scss',
-			entry: './styles/dark_slack.scss',
+			entry: './styles/styles.scss',
 			output: {
 				dev: '../chrome-extension',
 				prod: '../chrome-extension'
@@ -38,17 +38,11 @@ module.exports = {
 		},
 		resolveLoader: {
 			modulesDirectories: ['node_modules']
-		},
-		module: {
-			loaders: [{
-				test: /\.js$/,
-				loader: 'es6-loader'
-			}]
 		}
 	},
 	connect: {
 		port: 8080,
-		root: './build/dev'
+		root: './'
 	},
 	liveReload: {
 		port: 35729

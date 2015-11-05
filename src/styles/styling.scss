@@ -138,26 +138,59 @@ html {
   left: 40px $i;
 }
 
+.message_sender {
+  font: bold $v_font-size*.9 $v_font-family $i;
+  height: $v_font-size*.9 $i;
+  font-weight: bold $i;
+  color: #555 $i;
+  width: 10%;
+  overflow-x: hidden $i;
+  overflow-y: visible $i;
+  text-overflow: ellipsis;
+  display: inline-block;
+  margin-left: 4% $i;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 10px;
+
+  text-transform: uppercase;
+  a {
+    padding-right: 33px $i;
+  }
+}
+
 .message_content, #message-input {
   color: #888 $i;
 }
 
-.message_content, .message_sender {
-  font: $v_font-size $v_font-family $i;
+.message_content {
+  font-size: $v_font-size $i;
+  font-family: $v_font-family $i;
+  line-height: .9rem;
 }
 
 .message {
   line-height: 10px $i;
   margin-top: 0 $i;
-  padding-top: 1px $i;
-  padding-bottom: 1px $i;
-
-  &.show_user .message_content {
-    margin-left: 0 $i;
-  }
+  padding: 2px 0 $i;
 
   .message_content {
-    margin-left: 30px $i;
+    display: inline-block;
+    float: right;
+    width: 86%;
+  }
+}
+
+// reaction panel, snippet container - pad into message area
+.rxn_panel, .file_share {
+  margin-left: 13.5% $i;
+}
+
+// code snippet selector
+.snippet_container {
+  @extend .darkBg;
+  *:before {
+    @extend .darkBg;
   }
 }
 
@@ -192,10 +225,16 @@ html {
 }
 
 /* timestamp */
-
 .timestamp {
-  font-size: .6rem $i;
+  font-size: .5rem $i;
   color: #393939 $i;
+  margin-left: 0 $i;
+}
+
+.file_share {
+  .timestamp {
+    margin-left: -3rem $i;
+  }
 }
 
 /* unread divider */
@@ -208,13 +247,8 @@ html {
 
 /* stars for favoriting messages */
 .message .message_star_holder {
-  top: 5px;
-  left: -10px;
-}
-
-.message_sender {
-  font-weight: bold $i;
-  color: #555 $i;
+  top: 5px $i;
+  left: -10px $i;
 }
 
 /* message container spacing */
@@ -295,13 +329,6 @@ body:not(.feature_new_message_markup) .message .mention {
 /* collapse sidebar */
 .group, .channel {
   padding-right: 0px $i;
-}
-
-.member {
-  padding-right: 0px $i;
-  a {
-    padding-right: 33px $i;
-  }
 }
 
 #starred-list, #group-list, #channel-list, #im-list {

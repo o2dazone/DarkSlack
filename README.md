@@ -11,6 +11,9 @@ While Slack is an awesome application, I feel a lot of the UI elements take up t
 ## Extension
 Clone this repo down. Open up Chrome, and go to your Extensions. Check the box "Developer Mode" and click the button "Load unpacked extension...". Navigate to DarkSlack/chrome-extension. Enjoy!
 
+## Slack Message Type
+This plugin is made for the "Compact" Message Theme. Navigate to Preferences > Message Display and select "Compact" under Message Theme.
+
 ## Sidebar
 Slack allows a user to customize the sidebar. We use this over CSS overrides because native styling > *. Go to Preferences > Sidebar Theme and click the "Customize" link at the bottom. Copy paste the contents of sidebar_customization and click "Done".
 

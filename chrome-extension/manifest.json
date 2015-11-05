@@ -3,13 +3,18 @@
 
   "name": "Dark Slack",
   "description": "Alterations to the Slack UI. Darken and alter many portions of the UI.",
-  "version": "0.1",
+  "version": "0.2",
 
   "permissions": [
   ],
+
   "browser_action": {
     "default_icon": "icon.png"
   },
+
+  "web_accessible_resources": [
+    "styles.css", "styles.css?*"
+  ],
 
   "icons": {
     "16": "icon.png",
@@ -20,7 +25,6 @@
   "content_scripts": [
     {
       "matches": ["https://*.slack.com/*"],
-      "css": ["./dark_slack.css"],
       "js": ["./index.js"]
     }
   ]

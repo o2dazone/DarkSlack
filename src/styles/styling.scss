@@ -138,6 +138,34 @@ html {
   left: 40px $i;
 }
 
+
+.first {
+  .message_sender {
+    margin-right: -9% $i;
+  }
+
+  .message_body {
+    margin-left: -5px $i;
+  }
+}
+
+.message_body, .inline_attachment, .rxn_panel, .file_share {
+  padding-left: 9%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+
+// snippets, images, pulled-in content from url, etc
+.inline_attachment {
+  padding-top: 6px;
+  border-radius: 0 $i;
+  color: #748543 $i;
+  .attachment_bar {
+    background: transparent $i;
+  }
+}
+
 .message_sender {
   font: bold $v_font-size*.9 $v_font-family $i;
   height: $v_font-size*.9 $i;
@@ -148,14 +176,11 @@ html {
   text-overflow: ellipsis;
   display: inline-block;
   text-align: right;
+  margin-left: 0 $i;
   white-space: nowrap;
   padding-right: 10px;
   -webkit-filter: saturate(0.4);
-
   text-transform: uppercase;
-  a {
-    padding-right: 33px $i;
-  }
 }
 
 .message_content, #message-input {
@@ -193,19 +218,6 @@ ts-message .action_hover_container {
 
   a {
     background: transparent;
-  }
-}
-
-// reaction panel, snippet container - pad into message area
-.rxn_panel, .file_share {
-  margin-left: 13.5% $i;
-}
-
-// code snippet selector
-.snippet_container {
-  @extend .darkBg;
-  *:before {
-    @extend .darkBg;
   }
 }
 
@@ -269,7 +281,7 @@ ts-message .action_hover_container {
 /* message container spacing */
 
 #messages_container {
-  margin-left: -10px $i;
+  margin-left: -15px $i;
 }
 
 /* sidebar tweaks */
@@ -301,14 +313,6 @@ ts-message .action_hover_container {
   }
   ul {
     width: auto $i;
-  }
-}
-
-.inline_attachment {
-  border-radius: 0 $i;
-  color: #748543 $i;
-  .attachment_bar {
-    background: transparent $i;
   }
 }
 

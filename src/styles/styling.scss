@@ -1,372 +1,137 @@
-html {
+html, body {
   @extend .darkBg;
-}
 
-#flex_contents {
-  .heading {
-    @extend .darkBg;
-  }
-  .menu_heading {
-    @extend .darkBg;
+  // I know...super sloppy.
+  div {
+    @extend .transBg;
   }
 }
 
-#col_flex {
-  @extend .darkBg;
+// the main container for messages
+#messages_container {
+  div {
+    font: $v_font-size $v_font-family;
+    color: $c_font-color;
+  }
+
+  left: 15px;
+  margin-left: 0;
+
+  // individual message containers
+  ts-message {
+    &:hover {
+      @extend .transBg;
+    }
+  }
 }
 
-#col_flex .toolbar {
-  @extend .darkBg;
+// the little reaction icons that pop to the right when hovering over a message
+.action_hover_container {
+  top: 0 $i;
 }
 
-.monkey_scroll_bar {
-  @extend .darkBg;
+#client_header {
+  @extend %hideElForHover;
+  top: -40px;
+  background: lighten($c_darkgrey, 5%);
+
+  &:hover {
+    top: 0;
+    background: $c_darkgrey;
+  }
 }
 
-.divider_label {
-  @extend .darkBg;
+// margin of the client
+#client_body {
+  margin-top: -10px $i;
 }
 
-.day_divider_label {
-  @extend .darkBg;
+// compensate for client body by pushing sidebar down
+#col_channels {
+  background: lighten($c_darkgrey, 5%) $i;
+  width: 15px;
+  z-index: 100;
+  top: 25px;
+  position: absolute;
+  &:hover {
+    width: 220px;
+    background: $c_darkgrey;
+  }
+
+  .channel_name {
+    border-radius: 0;
+  }
+
+  .active {
+    .channel_name {
+      background: $c_active $i;
+    }
+  }
+
+  .unread {
+    .channel_name {
+      background: $c_highlight $i;
+    }
+  }
+
+  #channels_scroller {
+    overflow-y: auto;
+    border-right: 0;
+    height: auto $i;
+    padding-bottom: 0 $i;
+
+    h2 {
+      display: none;
+    }
+
+    ul {
+      width: 100% $i;
+    }
+
+    .section_holder {
+      margin: 0;
+    }
+  }
 }
 
+// footer section (text box)
+#footer {
+  left: 0;
+}
+
+// text box and + button
+#message-input, #primary_file_button {
+  @extend .transBg;
+  border: 1px solid #333 $i;
+  color: $c_font-color $i;
+}
+
+
+// + file menu next to text box
+#menu {
+  @extend .darkBg;
+  a {
+    color: $c_font-color $i;
+  }
+}
+
+
+// day divider
 .day_divider {
   @extend .darkBg;
 }
 
-#search_terms {
-  @extend .darkBg;
-}
 
-#primary_file_button {
-  @extend .darkBg;
-}
+// unread message divider
+#msgs_unread_divider {
+  margin-bottom: 5px $i;
 
-#message-input {
-  @extend .darkBg;
-  font-size: $v_font-size $i;
-}
-
-#channel_members_toggle {
-  @extend .darkBg;
-}
-
-#header {
-  @extend .darkBg;
-}
-
-#footer {
-  @extend .darkBg;
-}
-
-#col_messages {
-  @extend .darkBg;
-}
-
-#msgs_overlay_div {
- @extend .darkBg;
-}
-
-* {
-  border-radius: 0 $i;
-}
-
-#header {
-  zoom: .75 $i;
-  outline: 1px solid $c_darkborder $i;
-  position: absolute $i;
-  min-width: 0px $i;
-  width: 100% $i;
-  height: $v_header-height $i;
-  top: 35px $i;
-  left: 85% $i;
-  transition: .5s left;
-
-  &:hover {
-    z-index: 10 $i;
-    left: 0 $i;  }
-
-}
-
-/* menu when clicking on team name */
-#team_menu {
-  height: $v_header-height $i;
-
-  .ts_icon_chevron_large_down {
-    margin-top: -12px $i;
-  }
-}
-
-/* active user list icon */
-#channel_header #channel_members_toggle {
-  bottom: .1rem $i;
-}
-
-/* channel name */
-#active_channel_name {
-  height: $v_header-height $i;
-  line-height: 44px $i;
-
-  .name {
-    line-height: 40px $i;
-  }
-}
-
-/* team name */
-#team_name {
-  margin-top: 6px $i;
-}
-
-/* search box form */
-#header_search_form {
-  margin-top: 0 $i;
-
-  /* input field */
-  .search_form.search_input {
-    height: $v_header-height $i;
-  }
-}
-
-/* icons right of the search box */
-#details_toggle, #flex_menu_toggle, #recent_mentions_toggle, #stars_toggle {
-  top: 5px $i;
-  border: 0 $i;
-}
-
-#footer {
-  left: 40px $i;
-}
-
-
-.first {
-  .message_sender {
-    margin-right: -9% $i;
+  hr {
+    border-top-color: #333 $i;
   }
 
-  .message_body {
-    margin-left: -5px $i;
+  span {
+    @extend .darkBg;
+    color: $c_font-color $i;
   }
-}
-
-.message_body, .inline_attachment, .rxn_panel, .file_share {
-  padding-left: 9%;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-
-// snippets, images, pulled-in content from url, etc
-.inline_attachment {
-  padding-top: 6px;
-  border-radius: 0 $i;
-  color: #748543 $i;
-  .attachment_bar {
-    background: transparent $i;
-  }
-}
-
-.message_sender {
-  font: bold $v_font-size*.9 $v_font-family $i;
-  height: $v_font-size*.9 $i;
-  font-weight: bold $i;
-  width: 9%;
-  overflow-x: hidden $i;
-  overflow-y: visible $i;
-  text-overflow: ellipsis;
-  display: inline-block;
-  text-align: right;
-  margin-left: 0 $i;
-  white-space: nowrap;
-  padding-right: 10px;
-  -webkit-filter: saturate(0.4);
-  text-transform: uppercase;
-}
-
-.message_content, #message-input {
-  color: #888 $i;
-}
-
-.message_content {
-  font-size: $v_font-size $i;
-  font-family: $v_font-family $i;
-  line-height: .9rem;
-}
-
-.message {
-  line-height: 10px $i;
-  margin-top: 0 $i;
-  padding: 2px 0 $i;
-  overflow: hidden;
-
-  .message_content {
-    display: inline-block;
-    float: right;
-    width: 91%;
-  }
-}
-
-
-// hover state on messages
-ts-message.active:not(.standalone):not(.multi_delete_mode), ts-message:hover:not(.standalone):not(.multi_delete_mode) {
-  background: transparent;
-}
-
-// hover actions
-ts-message .action_hover_container {
-  top: -5px;
-
-  a {
-    background: transparent;
-  }
-}
-
-.is_limited_div {
-  background: transparent $i;
-}
-
-.day_divider hr, #header a, #search_terms, #message-input, #primary_file_button {
-  border-width: 1px $i;
-  border-color: #444 $i;
-}
-
-/* unread message banner at top of page */
-
-#messages_unread_status {
-  background: #51102E $i;
-}
-
-.message.divider {
-  border-color: transparent $i;
-}
-
-#client_body {
-  margin-top: 0 $i;
-}
-
-/* scroll bar */
-
-.monkey_scroll_handle_inner {
-  background: #777 $i;
-  border-color: #444 $i;
-}
-
-/* timestamp */
-.timestamp {
-  font-size: .5rem $i;
-  color: #393939 $i;
-  margin-left: 0 $i;
-}
-
-.file_share {
-  .timestamp {
-    margin-left: -3rem $i;
-  }
-}
-
-/* unread divider */
-
-.unread_divider hr {
-  margin-bottom: 2px $i;
-  border-color: #661100 $i;
-}
-
-
-/* stars for favoriting messages */
-.message .message_star_holder {
-  top: 5px $i;
-  left: -10px $i;
-}
-
-/* message container spacing */
-
-#messages_container {
-  margin-left: -15px $i;
-}
-
-/* sidebar tweaks */
-
-.monkey_scroll_hider {
-  overflow: visible $i;
-}
-
-#col_channels_bg {
-  display: none $i;
-}
-
-#channels_scroller {
-  height: auto $i;
-  overflow: scroll;
-  overflow-y: hidden;
-  overflow-x: scroll $i;
-  white-space: nowrap;
-
-  > div {
-    display: inline-block $i;
-    width: auto $i;
-  }
-}
-
-.channels_list_holder {
-  .section_holder {
-    margin: 0 0 4px $i;
-  }
-  ul {
-    width: auto $i;
-  }
-}
-
-#channel-list {
-  height: auto $i;
-}
-
-#col_channels {
-  width: 100% $i;
-  box-shadow: 0 10px 10px rgba(0,0,0,.6) !important;
-  border-bottom: 1px solid #333;
-  height: 24px $i;
-  overflow: hidden $i;
-  left: 0 $i;
-  top: 0px $i;
-  font-family: Helvetica $i;
-  z-index: 10;
-  position: absolute $i;
-}
-
-/* when someone mentions your name in chat */
-body:not(.feature_new_message_markup) .message .mention {
-  background: #353535 $i;
-  border: none $i;
-}
-
-/* emoji reaction icons */
-.emoji_rxn {
-  background: transparent $i;
-  border: none $i;
-}
-
-/* collapse sidebar */
-.group, .channel {
-  padding-right: 0px $i;
-}
-
-#starred-list, #group-list, #channel-list, #im-list {
-  overflow: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  display: inline-block $i;
-
-  > li {
-    display: inline-block;
-  }
-}
-
-.channel_name, .group_name, .im_name {
-  width: auto $i;
-  padding: 0 10px 0 3px $i;
-  font-size: $v_font-size $i;
-}
-
-#messages_unread_status {
-  top: 24px $i;
 }

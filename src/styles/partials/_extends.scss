@@ -1,3 +1,17 @@
 .darkBg {
   background: $c_darkgrey $i;
 }
+
+.transBg {
+  background: transparent $i;
+}
+
+%hideElForHover {
+  * {
+    visibility: hidden;
+  }
+
+  &:hover * {
+    visibility: visible;
+  }
+}

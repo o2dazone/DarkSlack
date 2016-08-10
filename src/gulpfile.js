@@ -6,7 +6,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
 var webpack = require('gulp-webpack');
-var compass = require('gulp-compass');
 var gulpConfig = require('./gulp.config');
 
 // or more concisely
@@ -16,7 +15,7 @@ function puts(error, stdout, stderr) { sys.puts(stdout) }
 
 
 // Tasks
-gulp.task('default', ['hint', 'scripts', 'compass']);
+gulp.task('default', ['hint', 'scripts', 'styles']);
 
 gulp.task('scripts', function() {
 	return gulp.src(gulpConfig.scripts.paths.entry)
@@ -33,19 +32,16 @@ gulp.task('hint', function() {
 		.pipe(jshint.reporter('default'));
 });
 
-gulp.task('compass', function() {
-  gulp.src(gulpConfig.styles.paths.entry)
-    .pipe(compass({
-      config_file: './config.rb',
-      css: gulpConfig.styles.paths.output.dev,
-      sass: 'styles'
-    }))
+gulp.task('styles', function() {
+  return gulp.src(gulpConfig.styles.paths.entry)
+    .pipe(sass())
+    .pipe(minifycss())
     .pipe(gulp.dest(gulpConfig.styles.paths.output.prod));
 });
 
 gulp.task('watch', ['default'], function() {
 	gulp.watch(gulpConfig.scripts.paths.all, ['scripts', 'hint']);
-	gulp.watch(gulpConfig.styles.paths.all, ['compass']);
+	gulp.watch(gulpConfig.styles.paths.all, ['styles']);
 	connect.server({
 		port: gulpConfig.connect.port,
 		root: gulpConfig.ports.expressRoot,
